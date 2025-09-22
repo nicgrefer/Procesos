@@ -1,22 +1,17 @@
-
 public class Proceso extends Thread {
 
-	public Proceso() {
-		super();
-		// TODO Auto-generated constructor stub
+    private int id; // Identificador del hilo
 
-	}
+    public Proceso(int id) {
+        super();
+        this.id = id;
+    }
 
-	@Override
-	public void run() {
-		// TODO Auto-generated method stub
-		super.run();
-		
-		for (int i = 0; i < 11; i++) {
-			System.out.println("Soy Proceso HIJO: " + i);
-
-		}
-
-	}
-
+    @Override
+    public void run() {
+    	super.run();
+        for (int i = 0; i < 11; i++) {
+            System.out.println("Soy Proceso HIJO " + id + ": " + i);
+        }
+    }
 }
