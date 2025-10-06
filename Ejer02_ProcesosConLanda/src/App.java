@@ -6,8 +6,8 @@ public class App {
                 System.out.println("Padre " + i);
                 int j = i;
                 for (int k = 1; k < 11; k++) {
-                    int kFinal = k;
-                    Thread hijo = new Thread(() -> System.out.println("Hilo " + j + " proceso " + kFinal));
+                    int pro = k;
+                    Thread hijo = new Thread(() -> System.out.println("Hilo " + j + " proceso " + pro));
                     hijo.start();
                 }
             }
