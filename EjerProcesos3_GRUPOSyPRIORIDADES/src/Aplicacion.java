@@ -2,8 +2,6 @@ import java.util.Scanner;
 
 public class Aplicacion {
 
-	
-	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
@@ -15,15 +13,18 @@ public class Aplicacion {
 			System.err.println("Como minimo tiene que ser 2 procesos");
 			
 		}else {
-			
-			for (int i=0; i<proces;i++) {
+			ThreadGroup grup1 = new ThreadGroup("grup1");
+			for (int i=1; i<=proces;i++) {
+				
+				if (i==1) {
+					Procesos p1 = new Procesos(grup1, "Proceso"+i, Thread.MAX_PRIORITY);
+					p1.start();
+				}else {
+					Procesos p2  = new Procesos(grup1, "Proceso"+i, Thread.NORM_PRIORITY);
+					p2.start();
+				}
 				
 			}
-			
-			System.out.println("2 o mas procesos :)");
 		}
-		
-
 	}
-
 }
